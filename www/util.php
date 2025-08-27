@@ -1225,7 +1225,7 @@ function parsedownMultilineText($text, $specials = 0) {
     $parsedown->setUrlsLinked(true);
     // URLs linked are always good changes, so ignore these differences when using the Markdown Test admin tool
     if($specials & IsAdminTool) {
-//        $parsedown->setUrlsLinked(false);
+        $parsedown->setUrlsLinked(false);
     }
     $markdown_converted = $parsedown->text($replaced_ific_br);
     $output = preg_replace("/<br \\/>/", "<br>", $markdown_converted);
